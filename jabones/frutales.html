@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jabones para mascotas</title>
+    <link rel="stylesheet" href="stilo.css">
+</head>
+<body>
+    <header>
+        <h1>Jabones MyRose</h1>
+        <nav>
+            <div class="sub-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="frutales.html"> Frutales</a></li>
+                <li><a href="herbales.html"> Herbales</a></li>
+                <li><a href="florales.html"> Florales</a></li>
+                <li><a href="mascotas.html"> Mascotas</a></li>
+                <li><a href="bebés.html"> Bebés</a></li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+        <form action="#" method="get" class="barra-busqueda" onsubmit="buscar(event)">
+          <input type="text" placeholder="Buscar..." name="busqueda" class="campo-busqueda" id="inputBusqueda">
+          <button type="submit" class="boton-busqueda">Buscar</button>
+        </form>
+      </div>
+
+    <h2> Jabones frutales </h2>
+
+    <div id="elementos">
+        <div class="contenedor-frutales">
+            <div class="elemento"><div class="caja"> <h2>Frambuesa $40 pesos </h2> <img src="imagenes/frambuesapng.png" height="200px" width="200px"> <p>La Frambuesa nos ayuda a conservar y mantener la belleza de la piel con un olor muy rico </p>  <button> Comprar </button></div></div>
+
+            <div class="elemento"><div class="caja"> <h2>Sandia $40 pesos </h2> <img src="imagenes/sandiaspng.png" height="160px" width="250px"><p>Duchate con la intensidad de la sandia, este jabon tropical te ayudará a hidratar tu piel </p> <br><br><button> Comprar </button> </div></div>
+
+            <div class="elemento"><div class="caja"> <h2>Melón $40 pesos </h2> <img src="imagenes/melonpng.png" height="180px" width="250px"><p>El melón es un buen aliado para mantener nuestra piel brillante, refresca tu piel con el jabon de melón  </p> <button> Comprar </button> </div></div>
+
+            <div class="elemento"><div class="caja"> <h2>Mandarina $40 pesos </h2> <img src="imagenes/mandarinapng.png" height="200px" width="250px"><p>El Jabón Artesanal de Mandarina ayuda a disminuir el estrés, las angustias y prepararse para un buen sueño. </p>  <button> Comprar </button> </div></div>
+        </div>
+</div>
+
+<script>function buscar(event) {
+    event.preventDefault();
+    
+    const inputValor = document.getElementById('inputBusqueda').value.toLowerCase(); 
+  
+    const elementos = document.getElementsByClassName('elemento'); 
+  
+    for (let elemento of elementos) {
+      const texto = elemento.textContent.toLowerCase(); 
+  
+      if (texto.includes(inputValor)) {
+        elemento.style.display = 'block'; 
+      } else {
+        elemento.style.display = 'none'; 
+      }
+    }
+  }
+  function buscar(event) {
+  event.preventDefault();
+
+  const inputValor = document.getElementById('inputBusqueda').value.toLowerCase();
+  const elementos = document.getElementsByClassName('elemento');
+
+  if (inputValor.trim() === '') {
+   
+    for (let elemento of elementos) {
+      elemento.style.display = 'block';
+    }
+    return; 
+  }
+
+  for (let elemento of elementos) {
+    const texto = elemento.textContent.toLowerCase();
+    if (texto.includes(inputValor)) {
+      elemento.style.display = 'block';
+    } else {
+      elemento.style.display = 'none';
+    }
+  }
+}
+  </script>
+</body>
+</html>

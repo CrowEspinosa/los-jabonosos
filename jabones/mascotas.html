@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jabones para mascotas</title>
+    <link rel="stylesheet" href="stilo.css">
+    <style>
+        body{
+           background-image: url(https://media.istockphoto.com/id/1317534498/es/vector/patr%C3%B3n-sin-costuras-con-cabezas-de-diferentes-razas-perros-corgi-beagle-chihuahua-terrier.jpg?s=2048x2048&w=is&k=20&c=6y5rLAHQAWPBt5-YbZVAVf7Vh3Rfxc9PmMb9TaL1TlE=);
+           background-size: 30%;
+        }
+        
+        .contenedor-bebés{
+           background-color: gray;
+        }
+       </style>
+</head>
+<body>
+    <header>
+        <h1>Jabones MyRose</h1>
+        <nav>
+            <div class="sub-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="frutales.html"> Frutales</a></li>
+                <li><a href="herbales.html"> Herbales</a></li>
+                <li><a href="florales.html"> Florales</a></li>
+                <li><a href="mascotas.html"> Mascotas</a></li>
+                <li><a href="bebés.html"> Bebés</a></li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+    <div class="contenedor">
+        <form action="#" method="get" class="barra-busqueda" onsubmit="buscar(event)">
+          <input type="text" placeholder="Buscar..." name="busqueda" class="campo-busqueda" id="inputBusqueda">
+          <button type="submit" class="boton-busqueda">Buscar</button>
+        </form>
+      </div>
+
+    <h2> Jabones para mascotas <style> h2{ background-color: bisque;}</style></h2>
+
+    <div id="elementos">
+        <div class="contenedor-mascotas">
+            <div class="elemento"> <div class="caja"> <h2>Aceite de coco $40 pesos</h2> <img src="imagenes/cocopng.png" height="150px" width="250px"> <p>Jabon con esencia a base de aceite de coco, ideal para nutrir la piel de tu peludito </p> <button> Comprar </button></div></div>
+            
+            <div class="elemento"> <div class="caja"> <h2>Vainilla $40 pesos</h2> <img src="imagenes/vainillapng.png" height="200px" width="300px"><p>Jabon con esencia de Vainilla, baña a tu peludito con este jabon para que tenga un aroma a heladod e vainilla </p> <button> Comprar </button> </div></div>
+
+            <div class="elemento"> <div class="caja"> <h2>Lavanda $40 pesos</h2> <img src="imagenes/lavandapng.png" height="200px" width="300px"><p>Jabon con esencia lavanda, baña a tu peludito con este jabon para que tenga un aroma delicioso  </p> <button> Comprar </button> </div></div>
+
+            <div class="elemento"> <div class="caja"> <h2>Almendra $40 pesos</h2> <img src="imagenes/almendras png.webp" height="200px" width="300px"><p>Jabon con esencia almendra, ideal para suavizar el pelaje de tu mascota </p> <br> <button> Comprar </button> </div></div>
+        </div>
+    
+    </div>
+
+<script>function buscar(event) {
+    event.preventDefault();
+    
+    const inputValor = document.getElementById('inputBusqueda').value.toLowerCase(); 
+  
+    const elementos = document.getElementsByClassName('elemento'); 
+  
+    for (let elemento of elementos) {
+      const texto = elemento.textContent.toLowerCase(); 
+  
+      if (texto.includes(inputValor)) {
+        elemento.style.display = 'block'; 
+      } else {
+        elemento.style.display = 'none'; 
+      }
+    }
+  }
+  function buscar(event) {
+  event.preventDefault();
+
+  const inputValor = document.getElementById('inputBusqueda').value.toLowerCase();
+  const elementos = document.getElementsByClassName('elemento');
+
+  if (inputValor.trim() === '') {
+   
+    for (let elemento of elementos) {
+      elemento.style.display = 'block';
+    }
+    return; 
+  }
+
+  for (let elemento of elementos) {
+    const texto = elemento.textContent.toLowerCase();
+    if (texto.includes(inputValor)) {
+      elemento.style.display = 'block';
+    } else {
+      elemento.style.display = 'none';
+    }
+  }
+}
+  </script>
+</body>
+</html>
