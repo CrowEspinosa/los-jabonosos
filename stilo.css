@@ -323,6 +323,14 @@ section {
         border-style: solid;
         border-color: black;
     }
+.contenedor-mapa{
+        background-color: #555;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        border-color: #000000;
+    }
 
 
     
