@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jabones para mascotas</title>
+    <link rel="stylesheet" href="stilo.css">
+</head>
+<body>
+    <header>
+        <h1>Jabones MyRose</h1>
+        <nav>
+            <div class="sub-menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="frutales.html"> Frutales</a></li>
+                <li><a href="herbales.html"> Herbales</a></li>
+                <li><a href="florales.html"> Florales</a></li>
+                <li><a href="mascotas.html"> Mascotas</a></li>
+                <li><a href="bebés.html"> Bebés</a></li>
+              
+            </ul>
+        </div>
+        </nav>
+    </header>
+    <div class="contenedor">
+        <form action="#" method="get" class="barra-busqueda" onsubmit="buscar(event)">
+          <input type="text" placeholder="Buscar..." name="busqueda" class="campo-busqueda" id="inputBusqueda">
+          <button type="submit" class="boton-busqueda">Buscar</button>
+        </form>
+      </div>
+
+    <h2> Compra por mayoreo <style> h2{ background-color: bisque;}</style></h2>
+    <h5> ¡Descuentos por temporada navideña del 20%¡</h5>
+
+    <div id="elementos">
+        <div class="contenedor-herbales">
+            <div class="elemento"> <div class="caja5"> <h2>Paquete de jabónes</h2> <img src="imagenes/paquetejabon.png" height="200px" width="250px"> <p>Elige un paquete de jabones con la cantidad y tipo de jabón a tu elección. </p> 
+              <h4>Descuento para mayoristas:</h4>
+              <p>En la de compra de 10 artículos o más, se apicara un descuento del 20% del costo total.</p> <button> Comprar </button></div></div>
+
+            <div class="elemento"><div class="caja5"> <h2>Esencias frutales </h2> <img src="imagenes/esfrutales.png" height="200px" width="220px"> <p>Elige un paquete de esencias frutales con la cantidad y tipo de jabón a tu elección. </p> 
+              <h4>Descuento para mayoristas:</h4>
+              <p>En la de compra de 5 artículos o más, se apicara un descuento del 20% del costo total.</p> <button> Comprar </button></div></div>
+
+            <div class="elemento"><div class="caja5"> <h2>Esencias herbales</h2> <img src="imagenes/esherbales.png" height="200px" width="150px"> <p>Elige un paquete de esencias herbales con la cantidad y tipo de jabón a tu elección. </p> 
+              <h4>Descuento para mayoristas:</h4>
+              <p>En la de compra de 5 artículos o más, se apicara un descuento del 20% del costo total.</p> <button> Comprar </button></div></div>
+
+            <div class="elemento"><div class="caja5"> <h2>Esencias florales</h2> <img src="imagenes/eslavanda.png" height="200px" width="130px"> <p>Elige un paquete de esencias florales con la cantidad y tipo de jabón a tu elección. </p> 
+              <h4>Descuento para mayoristas:</h4>
+              <p>En la de compra de 5 artículos o más, se apicara un descuento del 20% del costo total.</p> <button> Comprar </button></div></div>
+        </div>
+</div>
+<script>function buscar(event) {
+    event.preventDefault();
+    
+    const inputValor = document.getElementById('inputBusqueda').value.toLowerCase(); 
+  
+    const elementos = document.getElementsByClassName('elemento'); 
+  
+    for (let elemento of elementos) {
+      const texto = elemento.textContent.toLowerCase(); 
+  
+      if (texto.includes(inputValor)) {
+        elemento.style.display = 'block'; 
+      } else {
+        elemento.style.display = 'none'; 
+      }
+    }
+  }
+  function buscar(event) {
+  event.preventDefault();
+
+  const inputValor = document.getElementById('inputBusqueda').value.toLowerCase();
+  const elementos = document.getElementsByClassName('elemento');
+
+  if (inputValor.trim() === '') {
+   
+    for (let elemento of elementos) {
+      elemento.style.display = 'block';
+    }
+    return; 
+  }
+
+  for (let elemento of elementos) {
+    const texto = elemento.textContent.toLowerCase();
+    if (texto.includes(inputValor)) {
+      elemento.style.display = 'block';
+    } else {
+      elemento.style.display = 'none';
+    }
+  }
+}
+  </script>
+</body>
+</html>
